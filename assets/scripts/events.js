@@ -9,6 +9,7 @@ let messageElement = document.getElementById("message")
 let resetElement = document.getElementById("reset")
 let scoreElement = document.getElementById("score")
 let aiScoreElement = document.getElementById("ai-score")
+let choiceElement = document.createElement("div")
 
 let score = 0
 let aiScore = 0
@@ -48,7 +49,6 @@ const random = function (max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-let choiceElement = document.createElement("div")
 const displayChoices = function (player, ai) {
   choiceElement.classList.add("ai-choice", ai)
 
