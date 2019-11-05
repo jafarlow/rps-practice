@@ -1,9 +1,28 @@
-let options = document.getElementsByClassName("option")
 let choices = ["rock", "paper", "scissors"]
 let winState = { rock: "scissors", paper: "rock", scissors: "paper"}
+
+//ELEMENTS
+let options = document.getElementsByClassName("option")
 let battleElement = document.getElementById("battle")
 let aiMessageElement = document.getElementById("ai-message")
 let messageElement = document.getElementById("message")
+let resetElement = document.getElementById("reset")
+let scoreElement = document.getElementById("score")
+let aiScoreElement = document.getElementById("ai-score")
+
+let score = 0
+let aiScore = 0
+let store = window.localStorage
+
+if (store.getItem("score")) {
+  score = store.getItem("score")
+}
+if (store.getItem("aiScore")) {
+  aiScore = store.getItem("aiScore")
+}
+
+scoreElement.innerHTML = score
+aiScoreElement.innerHTML = aiScore
 
 for (let i = 0; i < options.length; i++) {
   let option = options[i]
@@ -29,8 +48,8 @@ const random = function (max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+let choiceElement = document.createElement("div")
 const displayChoices = function (player, ai) {
-  let choiceElement = document.createElement("div")
   choiceElement.classList.add("ai-choice", ai)
 
   aiMessageElement.innerHTML = "AI chooses:"
@@ -53,9 +72,35 @@ const battle = function (option) {
   } else if (aiChoice === winState[choice]) {
     option.classList.add("winner")
     messageElement.innerHTML = win
+    score++
+    store.setItem("score", score)
+    scoreElement.innerHTML = score
   } else {
     option.classList.add("loser")
     messageElement.innerHTML = lose
+    aiScore++
+    store.setItem("aiScore", aiScore)
+    aiScoreElement.innerHTML = aiScore
   }
+
   displayChoices(choice, aiChoice)
+  document.getElementById("reset").classList.remove("hide")
 }
+
+const reset = function () {
+  for (let i = 0; i < options.length; i++) {
+    let option = options[i]
+
+    option.classList.remove("disabled")
+    option.classList.remove("selected")
+    option.classList.remove("winner")
+    option.classList.remove("loser")
+    option.classList.remove("draw")
+  }
+  battleElement.removeChild(choiceElement)
+  aiMessageElement.innerHTML = ""
+  messageElement.innerHTML = ""
+  resetElement.classList.add("hide")
+}
+
+resetElement.addEventListener("click", reset)
