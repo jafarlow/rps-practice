@@ -60,6 +60,11 @@ body {
       &.selected {
         border: 3px solid #000;
       }
+      &.disabled {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.5;
+      }
     }
   }
 }
