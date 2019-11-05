@@ -57,6 +57,9 @@ body {
       &.scissors {
         background-image: url("../../public/scissors.png");
       }
+      &.selected {
+        border: 3px solid #000;
+      }
     }
   }
 }
