@@ -91,11 +91,7 @@ const reset = function () {
   for (let i = 0; i < options.length; i++) {
     let option = options[i]
 
-    option.classList.remove("disabled")
-    option.classList.remove("selected")
-    option.classList.remove("winner")
-    option.classList.remove("loser")
-    option.classList.remove("draw")
+    option.classList.remove("disabled", "selected", "winner", "loser", "draw")
   }
   battleElement.removeChild(choiceElement)
   aiMessageElement.innerHTML = ""
