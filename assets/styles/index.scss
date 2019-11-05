@@ -1,9 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
 
+$red: #ca0b00;
+$green: #4cbb17;
+$victory-green: #006847;
+$yellow: #f0d500;
+$yellow-orange: #ffae42;
+$blue-gray: #666699;
+$white-gray: #f3f3f3;
+$light-gray: #d3d3d3;
+$subtle: #525252;
+$almost-black: #16161d;
+
 body {
   margin: 0;
-  background-color: #f3f3f3;
-  color: #525252;
+  background-color: $blue-gray;
+  color: $white-gray;
+}
+
+button {
+  border: 0.125rem solid $almost-black;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: $yellow-orange;
+  }
+
+  &:focus {
+    background-color: $green;
+  }
 }
 
 .game {
@@ -17,6 +41,16 @@ body {
 
   h1 {
     margin: 1rem 0 0;
+    font-size: 4rem;
+    text-shadow:
+      -0.0625rem -0.0625rem 0 $almost-black,
+      0.0625rem -0.0625rem 0 $almost-black,
+      -0.0625rem 0.0625rem 0 $almost-black,
+      0.0625rem 0.0625rem 0 $almost-black;
+  }
+
+  p {
+    font-size: 1.5rem;
   }
 
   .battle {
@@ -28,7 +62,7 @@ body {
     align-items: center;
 
     .ai-choice {
-      background-color: #fff;
+      background-color: $light-gray;
       width: 125px;
       height: 125px;
       text-align: center;
@@ -65,7 +99,7 @@ body {
     margin: 1rem 0;
 
     .option {
-      background-color: #fff;
+      background-color: $light-gray;
       width: 125px;
       height: 125px;
       text-align: center;
@@ -92,17 +126,17 @@ body {
         background-image: url("../../public/scissors.png");
       }
       &.selected {
-        border: 3px solid #000;
+        border: 3px solid $almost-black;
         pointer-events: none;
 
         &.winner {
-          background-color: green;
+          background-color: $victory-green;
         }
         &.loser {
-          background-color: red;
+          background-color: $red;
         }
         &.draw {
-          background-color: yellow;
+          background-color: $yellow;
         }
       }
       &.disabled {
