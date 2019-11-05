@@ -31,6 +31,12 @@ const displayChoices = function (player, ai) {
   let choiceElement = document.createElement("div")
   choiceElement.classList.add("ai-choice", ai)
 
+  let header = document.createElement("h3")
+  let text = document.createTextNode("AI chooses: ")
+  header.classList.add("h3")
+  header.appendChild(text)
+
+  battleElement.appendChild(header)
   battleElement.appendChild(choiceElement)
 }
 

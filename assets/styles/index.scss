@@ -49,6 +49,13 @@ body {
         background-image: url("../../public/scissors.png");
       }
     }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      margin-right: 2rem;
+    }
   }
 
   .options {
@@ -85,6 +92,7 @@ body {
       }
       &.selected {
         border: 3px solid #000;
+        pointer-events: none;
       }
       &.disabled {
         cursor: default;
