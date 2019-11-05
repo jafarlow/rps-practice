@@ -1,6 +1,7 @@
 let options = document.getElementsByClassName("option")
 let choices = ["rock", "paper", "scissors"]
 let winState = { rock: "scissors", paper: "rock", scissors: "paper"}
+let battleElement = document.getElementById("battle")
 
 for (let i = 0; i < options.length; i++) {
   let option = options[i]
@@ -26,12 +27,20 @@ const random = function (max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+const displayChoices = function (player, ai) {
+  let choiceElement = document.createElement("div")
+  choiceElement.classList.add("ai-choice", ai)
+
+  battleElement.appendChild(choiceElement)
+}
+
 const battle = function (option) {
   // user
   let choice = option.dataset.choice
 
   // AI
   let aiChoice = choices[random(2, 0)]
+
 
   if (choice === aiChoice) {
     console.log("Draw!");
@@ -40,4 +49,5 @@ const battle = function (option) {
   } else {
     console.log("AI wins!");
   }
+  displayChoices(choice, aiChoice)
 }
