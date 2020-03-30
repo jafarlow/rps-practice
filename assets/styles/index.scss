@@ -1,5 +1,3 @@
-@import '~bootstrap/scss/bootstrap';
-
 $red: #ca0b00;
 $green: #4cbb17;
 $victory-green: #006847;
@@ -21,6 +19,9 @@ body {
 button {
   border: 0.125rem solid $almost-black;
   border-radius: 0.5rem;
+  font-size: 1.25rem;
+  min-width: 5.5rem;
+  padding: 0.5rem;
 
   &:hover {
     background-color: $yellow-orange;
@@ -41,7 +42,7 @@ button {
   margin: 0 auto;
 
   h1 {
-    margin: 1rem 0 0;
+    margin: 1rem 0;
     font-size: 4rem;
     text-shadow:
       -0.0625rem -0.0625rem 0 $almost-black,
@@ -52,6 +53,8 @@ button {
 
   p {
     font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   .battle {
@@ -105,10 +108,10 @@ button {
 
     .option {
       background-color: $light-gray;
-      width: 125px;
-      height: 125px;
+      width: 85px;
+      height: 85px;
       text-align: center;
-      line-height: 125px;
+      line-height: 85px;
       border-radius: 1rem;
       box-shadow: 0.125rem 0.125rem 1rem 0 rgba(0, 0, 0, 0.25);
       cursor: pointer;
