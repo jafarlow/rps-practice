@@ -38,7 +38,7 @@ button {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 768px;
+  max-width: 48rem;
   margin: 0 auto;
 
   h1 {
@@ -67,10 +67,10 @@ button {
 
     .ai-choice {
       background-color: $light-gray;
-      width: 125px;
-      height: 125px;
+      width: 7.8125rem;
+      height: 7.8125rem;
       text-align: center;
-      line-height: 125px;
+      line-height: 7.8125rem;
       border-radius: 1rem;
       box-shadow: 0.125rem 0.125rem 1rem 0 rgba(0, 0, 0, 0.25);
 
@@ -108,10 +108,10 @@ button {
 
     .option {
       background-color: $light-gray;
-      width: 85px;
-      height: 85px;
+      width: 5.3125rem;
+      height: 5.3125rem;
       text-align: center;
-      line-height: 85px;
+      line-height: 5.3125rem;
       border-radius: 1rem;
       box-shadow: 0.125rem 0.125rem 1rem 0 rgba(0, 0, 0, 0.25);
       cursor: pointer;
@@ -126,18 +126,8 @@ button {
 
       padding: 1.25rem;
 
-      // &.rock {
-      //   padding: 1.25rem;
-      //   // background-image: url("../../public/rock.png");
-      // }
-      // &.paper {
-      //   background-image: url("../../public/paper.png");
-      // }
-      // &.scissors {
-      //   background-image: url("../../public/scissors.png");
-      // }
       &.selected {
-        border: 3px solid $almost-black;
+        border: 0.1875rem solid $almost-black;
         pointer-events: none;
 
         &.winner {
