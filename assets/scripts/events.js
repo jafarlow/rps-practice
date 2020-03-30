@@ -10,6 +10,7 @@ let resetElement = document.getElementById("reset")
 let scoreElement = document.getElementById("score")
 let aiScoreElement = document.getElementById("ai-score")
 let choiceElement = document.createElement("div")
+let aiChoiceDescription = document.createElement("p")
 
 let score = 0
 let aiScore = 0
@@ -51,9 +52,12 @@ const random = function (max, min) {
 
 const displayChoices = function (player, ai) {
   choiceElement.classList.add("ai-choice", ai)
+  aiChoiceDescription.classList.add("ai-choice-descr", ai)
 
   aiMessageElement.innerHTML = "AI chooses:"
   battleElement.appendChild(choiceElement)
+  battleElement.appendChild(aiChoiceDescription)
+  aiChoiceDescription.innerHTML = ai
 }
 
 const battle = function (option) {

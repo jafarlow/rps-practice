@@ -91,6 +91,10 @@ button {
       align-items: center;
       font-style: italic;
     }
+
+    .ai-choice-descr {
+      text-transform: capitalize;
+    }
   }
 
   .options {
@@ -117,15 +121,18 @@ button {
       background-repeat: no-repeat;
       background-position: center center;
 
-      &.rock {
-        background-image: url("../../public/rock.png");
-      }
-      &.paper {
-        background-image: url("../../public/paper.png");
-      }
-      &.scissors {
-        background-image: url("../../public/scissors.png");
-      }
+      padding: 1.25rem;
+
+      // &.rock {
+      //   padding: 1.25rem;
+      //   // background-image: url("../../public/rock.png");
+      // }
+      // &.paper {
+      //   background-image: url("../../public/paper.png");
+      // }
+      // &.scissors {
+      //   background-image: url("../../public/scissors.png");
+      // }
       &.selected {
         border: 3px solid $almost-black;
         pointer-events: none;
@@ -144,6 +151,12 @@ button {
         cursor: default;
         pointer-events: none;
         opacity: 0.5;
+      }
+    }
+
+    .choice-wrapper {
+      p {
+        text-align: center;
       }
     }
   }

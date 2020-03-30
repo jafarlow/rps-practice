@@ -15,11 +15,23 @@
     <body>
       <main class="game">
         <h1>Rock, Paper, Scissors</h1>
-        <p>Player Score <span id="score"></span> / <span id="ai-score"></span> AI Score</p>
+        <p>Player Score <span id="score"></span> | <span id="ai-score"></span> AI Score</p>
         <div class="options">
-          <div class="option rock" data-choice="rock"></div>
-          <div class="option paper" data-choice="paper"></div>
-          <div class="option scissors"  data-choice="scissors"></div>
+          <div class="choice-wrapper">
+            <img src="/public/rock.png" alt="rock" class="option rock" data-choice="rock" title="rock">
+            <p>Rock</p>
+          </div>
+          <div class="choice-wrapper">
+            <img src="/public/paper.png" alt="paper" class="option paper" data-choice="paper" title="paper">
+            <p>Paper</p>
+          </div>
+          <div class="choice-wrapper">
+            <img src="/public/scissors.png" alt="scissors" class="option scissors" data-choice="scissors" title="scissors">
+            <p>Scissors</p>
+          </div>
+          <!-- <div class="option rock" data-choice="rock"></div> -->
+          <!-- <div class="option paper" data-choice="paper"></div> -->
+          <!-- <div class="option scissors"  data-choice="scissors"></div> -->
         </div>
         <div class="battle" id="battle">
           <h3 id="ai-message"></h3>
