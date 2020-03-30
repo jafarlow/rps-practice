@@ -92,14 +92,26 @@ const battle = function (option) {
 }
 
 const reset = function () {
+  // NOTE: this loop removes any classes from the user's choice
   for (let i = 0; i < options.length; i++) {
     let option = options[i]
 
     option.classList.remove("disabled", "selected", "winner", "loser", "draw")
   }
+
+  // NOTE: this loop is what removes the classes for the ai choice
+  // without this, the classes stack and the img will not change
+  let aiClassList = choiceElement.classList
+  while (aiClassList.length > 0) {
+    aiClassList.remove(aiClassList.item(0))
+  }
+
+  // clear content
   battleElement.removeChild(choiceElement)
+  battleElement.removeChild(aiChoiceDescription)
   aiMessageElement.innerHTML = ""
   messageElement.innerHTML = ""
+
   resetElement.classList.add("hide")
 }
 
