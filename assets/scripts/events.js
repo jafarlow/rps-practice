@@ -52,7 +52,7 @@ const random = function (max, min) {
 
 const displayChoices = function (player, ai) {
   choiceElement.classList.add("ai-choice", ai)
-  aiChoiceDescription.classList.add("ai-choice-descr", ai)
+  aiChoiceDescription.classList.add("ai-choice-descr")
 
   aiMessageElement.innerHTML = "AI chooses:"
   battleElement.appendChild(choiceElement)
