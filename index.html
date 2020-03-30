@@ -12,10 +12,13 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
       <main class="game">
         <h1>Rock, Paper, Scissors</h1>
         <p>Player Score <span id="score"></span> | <span id="ai-score"></span> AI Score</p>
+
+        <!-- Player choices -->
         <div class="options">
           <div class="choice-wrapper">
             <img src="/public/rock.png" alt="rock" class="option rock" data-choice="rock" title="rock">
@@ -30,12 +33,17 @@
             <p>Scissors</p>
           </div>
         </div>
+
+        <!-- AI choice -->
         <div class="battle" id="battle">
           <h3 id="ai-message"></h3>
         </div>
+
+        <!-- Result & game reset -->
         <h2 id="message"></h2>
         <button type="button" name="reset" class="reset hide" id="reset">Reset</button>
       </main>
+
       <script type="text/javascript" src="./assets/scripts/events.js"></script>
     </body>
 </html>
