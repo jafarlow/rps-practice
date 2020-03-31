@@ -23,8 +23,8 @@ if (store.getItem("aiScore")) {
   aiScore = store.getItem("aiScore")
 }
 
-scoreElement.innerHTML = score
-aiScoreElement.innerHTML = aiScore
+scoreElement.innerText = score
+aiScoreElement.innerText = aiScore
 
 for (let i = 0; i < options.length; i++) {
   let option = options[i]
@@ -54,10 +54,10 @@ const displayChoices = function (player, ai) {
   choiceElement.classList.add("ai-choice", ai)
   aiChoiceDescription.classList.add("ai-choice-descr")
 
-  aiMessageElement.innerHTML = "AI chooses:"
+  aiMessageElement.innerText = "AI chooses:"
   battleElement.appendChild(choiceElement)
   battleElement.appendChild(aiChoiceDescription)
-  aiChoiceDescription.innerHTML = ai
+  aiChoiceDescription.innerText = ai
 }
 
 const battle = function (option) {
@@ -72,19 +72,19 @@ const battle = function (option) {
 
   if (choice === aiChoice) {
     option.classList.add("draw")
-    messageElement.innerHTML = draw
+    messageElement.innerText = draw
   } else if (aiChoice === winState[choice]) {
     option.classList.add("winner")
-    messageElement.innerHTML = win
+    messageElement.innerText = win
     score++
     store.setItem("score", score)
-    scoreElement.innerHTML = score
+    scoreElement.innerText = score
   } else {
     option.classList.add("loser")
-    messageElement.innerHTML = lose
+    messageElement.innerText = lose
     aiScore++
     store.setItem("aiScore", aiScore)
-    aiScoreElement.innerHTML = aiScore
+    aiScoreElement.innerText = aiScore
   }
 
   displayChoices(choice, aiChoice)
@@ -109,8 +109,8 @@ const reset = function () {
   // clear content
   battleElement.removeChild(choiceElement)
   battleElement.removeChild(aiChoiceDescription)
-  aiMessageElement.innerHTML = ""
-  messageElement.innerHTML = ""
+  aiMessageElement.innerText = ""
+  messageElement.innerText = ""
 
   resetElement.classList.add("hide")
 }
