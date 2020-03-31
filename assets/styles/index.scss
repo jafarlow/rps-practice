@@ -79,7 +79,6 @@ button {
       border-radius: 1rem;
       box-shadow: 0.125rem 0.125rem 1rem 0 rgba(0, 0, 0, 0.25);
 
-      // background-size: 68%;
       background-size: 5.3125rem 5.3125rem;
       background-repeat: no-repeat;
       background-position: center center;
@@ -103,6 +102,7 @@ button {
 
     .ai-choice-descr {
       text-transform: capitalize;
+      margin-top: 0.25rem;
     }
   }
 
@@ -116,21 +116,16 @@ button {
       background-color: $light-gray;
       width: 5.3125rem;
       height: 5.3125rem;
-      text-align: center;
       line-height: 5.3125rem;
+      padding: 1.25rem;
       border-radius: 1rem;
+      text-align: center;
       box-shadow: 0.125rem 0.125rem 1rem 0 rgba(0, 0, 0, 0.25);
       cursor: pointer;
 
       &:hover {
         box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.25);
       }
-
-      // background-size: 75%;
-      // background-repeat: no-repeat;
-      // background-position: center center;
-
-      padding: 1.25rem;
 
       &.selected {
         border: 0.1875rem solid $almost-black;
@@ -165,18 +160,21 @@ button {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5rem) {
   .game {
     h1 {
       font-size: 3.5rem;
     }
+
     h2 {
       margin-top: 0;
     }
+
     p {
       font-size: 1rem;
       font-weight: bold;
     }
+
     .battle {
       margin: 0;
 
@@ -186,6 +184,7 @@ button {
         background-size: 3.453125rem 3.453125rem;
       }
     }
+
     .options {
       margin-bottom: 0;
 
