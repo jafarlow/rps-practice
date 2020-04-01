@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Rock, Paper, Scissors</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <main class="game">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>Player Score <span id="score"></span> | <span id="ai-score"></span> AI Score</p>
+
+        <!-- Player choices -->
+        <div class="options">
+          <div class="choice-wrapper">
+            <img src="/public/rock.png" alt="rock" class="option rock" data-choice="rock" title="rock">
+            <p>Rock</p>
+          </div>
+          <div class="choice-wrapper">
+            <img src="/public/paper.png" alt="paper" class="option paper" data-choice="paper" title="paper">
+            <p>Paper</p>
+          </div>
+          <div class="choice-wrapper">
+            <img src="/public/scissors.png" alt="scissors" class="option scissors" data-choice="scissors" title="scissors">
+            <p>Scissors</p>
+          </div>
+        </div>
+
+        <!-- AI choice -->
+        <div class="battle" id="battle">
+          <h3 id="ai-message"></h3>
+        </div>
+
+        <!-- Result & game reset -->
+        <h2 id="message"></h2>
+        <button type="button" name="reset" class="reset hide" id="reset">Reset</button>
+      </main>
+
+      <script type="text/javascript" src="./assets/scripts/events.js"></script>
+    </body>
+</html>
